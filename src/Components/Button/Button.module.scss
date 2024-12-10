@@ -30,6 +30,12 @@
     margin-left: 8px;
 }
 
+.icon { 
+    display: flex;
+    align-items: center;
+    width: 24px;
+}
+
 // Button types:
 .rounded {
     border-radius: 999px;

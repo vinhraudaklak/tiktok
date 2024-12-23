@@ -37,3 +37,13 @@ a[href] {
   color: var(--text-color);
   text-decoration: none;
 }
+
+// Custom tippy tooltip 
+
+body .tippy-box {
+   border-radius: 6px;
+   padding: 2px 4px;
+   font-size: 1.6rem;
+   background-color: #333;
+   opacity: 0.8;
+}

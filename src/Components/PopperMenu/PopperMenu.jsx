@@ -38,7 +38,9 @@ const PopperMenu = ({ children, width, items = [], onChange = defaultFn }) => {
 
     return (
         <Tippy
-            visible
+            // Xác định vị trí.
+            offset={[20, 15]}
+            // tg ẩn
             delay={[0, 700]}
             // interactive Cho phép active vào element.
             interactive
@@ -59,6 +61,8 @@ const PopperMenu = ({ children, width, items = [], onChange = defaultFn }) => {
                     </Popper>
                 </div>
             )}
+            // Khi ẩn đi tự về trang menu 1.
+            onHidden={() => setHistory((prev) => prev.slice(0, 1))}
         >
             {children}
         </Tippy>

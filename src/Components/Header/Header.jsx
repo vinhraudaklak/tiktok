@@ -21,12 +21,43 @@ import 'tippy.js/dist/tippy.css';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import PopperMenu from '../PopperMenu/PopperMenu';
+import { type } from '@testing-library/user-event/dist/type';
 
 const cx = classNames.bind(styles);
+// Note: quy ước thằng nào có children thì thằng đó có cấp hai.
 const MENU_ITEMS = [
     {
         icon: <FontAwesomeIcon icon={faEarthAmericas} />,
         title: 'English',
+        children: {
+            title: 'Language',
+            data: [
+                {
+                    type: 'Language',
+                    title: 'English',
+                    children: {
+                        title: 'Language',
+                        data: [
+                            {
+                                type: 'Language1',
+                                code: 'en1',
+                                title: 'English1',
+                            },
+                            {
+                                type: 'Language1',
+                                code: 'vi1',
+                                title: 'Tiếng Việt1',
+                            },
+                        ],
+                    },
+                },
+                {
+                    type: 'Language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+            ],
+        },
     },
     {
         icon: <FontAwesomeIcon icon={faCircleQuestion} />,
@@ -47,6 +78,16 @@ const Header = () => {
             setSearchResult([]);
         }, 0);
     }, []);
+
+    // Handle Logic:
+    const handleMenuOnChange = (menuItem) => {
+       switch (menuItem.type) {
+        case 'languages':
+            // Handle Change Language.
+            break;
+        default:
+       }
+    };
 
     return (
         <header className={cx('wrapper')}>
@@ -93,7 +134,7 @@ const Header = () => {
                     <Button text>Upload</Button>
                     <Button primary>Log in</Button>
 
-                    <PopperMenu width="224px" items={MENU_ITEMS}>
+                    <PopperMenu width="224px" items={MENU_ITEMS} onChange={handleMenuOnChange}>
                         <button className={cx('moreBtn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
                         </button>

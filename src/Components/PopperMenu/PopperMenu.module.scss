@@ -1,20 +1,39 @@
 .menuList {
-
     .wrapPopper {
-      padding: 8px 0px ;
+        padding: 8px 0px;
     }
 
+    // Menu Item:
     .menuItem {
         margin-left: 0;
         width: 100%;
         justify-content: flex-start;
         border-radius: 0;
-        height: 48px;
+        line-height: 2.2rem;
 
         &:hover {
-          background-color: rgba(22, 24, 35, 0.03);
+            background-color: rgba(22, 24, 35, 0.03);
         }
     }
-    
-  }
-  
+}
+
+// HeaderMenu:
+.header {
+    position: relative;
+    height: 50px;
+    margin-top: -8px;
+}
+
+.backBtn {
+    width: 50px;
+    height: 100%;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.headerTitle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

@@ -101,7 +101,29 @@
         }
     }
 
+    // Actions.
     .actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+
+        .actionBtn {
+            background-color: transparent;
+            font-size: 2.2rem;
+            color: #161823;
+            cursor: pointer;
+        }
+
+        .userAvatar {
+            height: 32px;
+            width: 32px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-left: 8px;
+            cursor: pointer;
+        }
+
         .moreBtn {
             font-size: 2rem;
             margin-left: 28px;
